@@ -7,8 +7,11 @@ export default function Home() {
     input.accept = '.pdf,.epub';
     input.onchange = (e) => {
       const file = (e.target as HTMLInputElement).files?.[0];
-      if (file) {
-        console.log('Selected file:', file.name);
+      if (file && ((file.name.endsWith(".pdf") || file.name.endsWith(".epub")))) {
+        // open reader
+      }
+      else {
+        alert("Please select a valid file (PDF or EPUB)");
       }
     };
     input.click();
