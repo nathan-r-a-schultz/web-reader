@@ -9,15 +9,30 @@ export default function Home() {
       const file = (e.target as HTMLInputElement).files?.[0];
       if (file) {
         console.log('Selected file:', file.name);
-        // File selected - you can handle it here
       }
     };
     input.click();
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <button onClick={handleFileSelect}>Select File</button>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div>
+        <p>Welcome to a web based reader for PDF and EPUB files</p>
+      </div>
+      <div>
+        <button 
+          onClick={handleFileSelect}
+          style={{
+            border: '1px solid #ccc',
+            padding: '8px 16px',
+            background: '#fff',
+            cursor: 'pointer',
+            fontSize: '16px'
+          }}
+        >
+          Select File
+        </button>
+      </div>
     </div>
   );
 }
